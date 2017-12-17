@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(RaycastController))]
-[RequireComponent(typeof(PlayerInput))]
 public class Player : MonoBehaviour {
 
 	public float gravity; //Amount of velocity y to fall
@@ -27,16 +26,18 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		getPlayerInput ();
+		getPlayerInput ();
 		velocity.x = directionalInput.x * speed;
 		velocity.y += gravity * Time.deltaTime;
 		Move (velocity * Time.deltaTime);
 
 		if (rc.collision.below) {
+			Debug.Log ("COLLISION BELOW");
 			velocity.y = 0f;
+		} else {
+			Debug.Log ("AIRBORNE");
 		}
 	}
-
 	public void Move(Vector2 moveAmount)
 	{
 		rc.UpdateRayOrigins ();

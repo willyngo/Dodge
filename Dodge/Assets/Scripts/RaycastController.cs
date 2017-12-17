@@ -7,8 +7,8 @@ public class RaycastController : MonoBehaviour {
 
 	public LayerMask collisionMask; //Layer in which to detect a collision
 
-	public const float widthBuffer = 0.015f; //Buffer distance
-	private const float dstBetweenRays = 0.25f; //Should have 4 rays for each side
+	public const float widthBuffer = .015f; //Buffer distance
+	private const float dstBetweenRays = .25f; //Should have 4 rays for each side
 
 	public int rayCount_h; //number of horizontal rays
 	public int rayCount_v; //number of vertical rays
@@ -30,6 +30,7 @@ public class RaycastController : MonoBehaviour {
 	public virtual void Awake(){
 		box = GetComponent<BoxCollider2D> ();
 	}
+
 	void Start () {
 		/*** Set up raycasts ***/
 		//Get bounds of boxcollider with a bit of buffer
@@ -81,24 +82,26 @@ public class RaycastController : MonoBehaviour {
 	{
 		float directionY = Mathf.Sign (moveAmount.y);
 		float rayLength = Mathf.Abs (moveAmount.y) + widthBuffer;
+		Vector2 rayDirection = Vector2.up * directionY;
 
 		//firing raycast
 		for (int i = 0; i < rayCount_v; i++) {
 			Vector2 rayOrigin = (directionY == -1) ? botLeft : topLeft;
 			rayOrigin += Vector2.right * (raySpacing_v * i + moveAmount.x);
-			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, Vector2.up * directionY, rayLength, collisionMask);
+			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, collisionMask);
 
-			Debug.DrawRay (rayOrigin, Vector2.up * directionY, Color.red);
+			Debug.DrawRay (rayOrigin, rayDirection, Color.red);
 
 			//If collision found, update moveAmount.y by reducing the change in velocity
 			if (hit) {
+				Debug.Log ("HIT!");
 				moveAmount.y = (hit.distance - widthBuffer) * directionY;
 				rayLength = hit.distance;
-			}
 
-			//Set collision bool
-			collision.below = (directionY == -1);
-			collision.above = (directionY == 1);
+				//Set collision bool
+				collision.below = (directionY == -1);
+				collision.above = (directionY == 1);
+			}
 		}
 	}
 
