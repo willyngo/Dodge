@@ -40,6 +40,9 @@ public class RaycastController : MonoBehaviour {
 		float width = bounds.size.x;
 		float height = bounds.size.y;
 
+		//Set direction, by default we face right;
+		collision.collDirection = 1;
+
 		//Calculate number of rays
 		rayCount_h = Mathf.RoundToInt (height / dstBetweenRays);
 		rayCount_v = Mathf.RoundToInt (width / dstBetweenRays);
@@ -66,8 +69,15 @@ public class RaycastController : MonoBehaviour {
 		botRight = new Vector2 (bounds.max.x, bounds.min.y);
 	}
 
+	/// <summary>
+	/// Checks for both horizontal and vertical collisions. 
+	/// If collisions are encountered, moveAmount will be adjusted
+	/// </summary>
+	/// <param name="moveAmount">Move amount.</param>
 	public void checkCollisions(ref Vector2 moveAmount){
-		
+
+		checkHorizontalCollision (ref moveAmount);
+
 		if (moveAmount.y != 0) {
 			checkVerticalCollisions (ref moveAmount);
 		}
@@ -75,7 +85,32 @@ public class RaycastController : MonoBehaviour {
 
 	private void checkHorizontalCollision(ref Vector2 moveAmount)
 	{
+		float directionX = collision.collDirection;
+		float rayLength = Mathf.Abs (moveAmount.x) + widthBuffer;
+		Vector2 rayDirection = Vector2.right * directionX;
 
+		//Creates raycast
+		for (int i = 0; i < rayCount_h; i++) {
+			Vector2 rayOrigin = directionX == 1 ? botRight : botLeft;
+			rayOrigin += Vector2.up * raySpacing_h * i;
+			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, collisionMask);
+
+			Debug.DrawRay (rayOrigin, rayDirection, Color.red);
+
+			if (hit) {
+				if (hit.distance == 0) {
+					continue;
+				}
+
+				//If hit a wall
+				moveAmount.x = (hit.distance - widthBuffer) * directionX;
+				rayLength = hit.distance;
+
+				//Set which side has collided
+				collision.right = (directionX == 1);
+				collision.left = (directionX == -1);
+			}
+		}
 	}
 
 	private void checkVerticalCollisions(ref Vector2 moveAmount)
@@ -94,7 +129,6 @@ public class RaycastController : MonoBehaviour {
 
 			//If collision found, update moveAmount.y by reducing the change in velocity
 			if (hit) {
-				Debug.Log ("HIT!");
 				moveAmount.y = (hit.distance - widthBuffer) * directionY;
 				rayLength = hit.distance;
 
@@ -114,7 +148,7 @@ public class RaycastController : MonoBehaviour {
 		public bool descendingSlope;
 		public float slopeAngle, slopeAngleOld;
 		public Vector2 moveAmountOld;
-		public int faceDir;
+		public int collDirection;
 		public bool fallingThroughPlatform;
 		public bool standingOnPlatform;
 
