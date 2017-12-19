@@ -18,15 +18,17 @@ public class Player : MonoBehaviour {
 
 	public RaycastController rc;
 	public SpriteRenderer render;
+	public Animator animator;
 
 	// Use this for initialization
 	void Start () {
 		rc = GetComponent<RaycastController> ();
 		render = GetComponent<SpriteRenderer> ();
+		animator = GetComponent<Animator> ();
 
 		//Kinematic formula, solve for acceleration going down
 		gravity = -(2 * 2.5f) / Mathf.Pow(0.32f, 2);
-		speed = 7f;
+		speed = 5f;
 		jumpHeight = 12.5f;
 	}
 	
@@ -73,6 +75,7 @@ public class Player : MonoBehaviour {
 		} else if (!rc.collision.below) { //when airborne
 			isAirborne = true;
 		}
+		animator.SetBool ("airborne", isAirborne); //Set sprite to airborne animation
 
 		if (rc.collision.above) { //If hit ceiling, set velocity.y to 0 to prevent accumulating
 			velocity.y = 0f;
@@ -104,6 +107,7 @@ public class Player : MonoBehaviour {
 	private void GetPlayerInput()
 	{
 		this.directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+		animator.SetFloat ("velocityX", Mathf.Abs (directionalInput.x));
 
 		//Jump
 		if (Input.GetKeyDown ("j")) {

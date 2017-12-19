@@ -24,6 +24,9 @@ public class RaycastController : MonoBehaviour {
 	public Vector2 botLeft;
 	public Vector2 botRight;
 
+	//Slope angles
+	public float maxSlopeAngle;
+
 	//Collisions information
 	public CollisionInformation collision;
 
@@ -50,6 +53,9 @@ public class RaycastController : MonoBehaviour {
 		//Space them out evenly
 		raySpacing_h = height / (rayCount_h - 1);
 		raySpacing_v = width / (rayCount_v - 1);
+
+		//Slope angle
+		maxSlopeAngle = 60f;
 	}
 
 	/**
@@ -75,6 +81,10 @@ public class RaycastController : MonoBehaviour {
 	/// </summary>
 	/// <param name="moveAmount">Move amount.</param>
 	public void checkCollisions(ref Vector2 moveAmount){
+		
+		if (moveAmount.y < 0) {
+			handleSlopeDescent (ref moveAmount);
+		}
 
 		checkHorizontalCollision (ref moveAmount);
 
@@ -83,6 +93,10 @@ public class RaycastController : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Checks for horizontal collisions. Also handles slopes.
+	/// </summary>
+	/// <param name="moveAmount">Move amount.</param>
 	private void checkHorizontalCollision(ref Vector2 moveAmount)
 	{
 		float directionX = collision.collDirection;
@@ -91,26 +105,71 @@ public class RaycastController : MonoBehaviour {
 
 		//Creates raycast
 		for (int i = 0; i < rayCount_h; i++) {
+			//If obj facing right, first raycast starts from bottomRight, else start from bottomLeft
 			Vector2 rayOrigin = directionX == 1 ? botRight : botLeft;
+
+			//Each iteration will create a raycast and each raycast will be spaced according to raySpacing_h
 			rayOrigin += Vector2.up * raySpacing_h * i;
+
+			//Create raycast
 			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, collisionMask);
 
+			//Shows raycast in scene viewer
 			Debug.DrawRay (rayOrigin, rayDirection, Color.red);
 
 			if (hit) {
+				//If already colliding with obstacle, leave as is.
 				if (hit.distance == 0) {
 					continue;
 				}
+				float slopeAngle = Vector2.Angle (hit.normal, Vector2.up);
+				//Only bottom-most raycast checks for slopes
+				if (i == 0) {
+					HandleSlope (slopeAngle, ref moveAmount);
+				}
 
-				//If hit a wall
-				moveAmount.x = (hit.distance - widthBuffer) * directionX;
-				rayLength = hit.distance;
-
-				//Set which side has collided
-				collision.right = (directionX == 1);
-				collision.left = (directionX == -1);
+				//If not climbing a slope, means we hit a wall or obstacle. Treats steep angle slope the same.
+				if (!collision.climbingSlope || slopeAngle > maxSlopeAngle) {
+					//Reduce velocity.x, prevent from going through obstacle
+					moveAmount.x = (hit.distance - widthBuffer) * directionX;
+					rayLength = hit.distance;
+				
+					//Set which side has collided
+					collision.right = (directionX == 1);
+					collision.left = (directionX == -1);
+				}
 			}
 		}
+	}
+
+	/// <summary>
+	/// Adjust velocity of game object when encountering a slope.
+	/// </summary>
+	/// <param name="slopeAngle">Slope angle.</param>
+	/// <param name="moveAmount">Move amount.</param>
+	private void HandleSlope(float slopeAngle, ref Vector2 moveAmount){
+		//Climb if slope is not too steep.
+		if (slopeAngle <= maxSlopeAngle) {
+			float distanceToSlopeStart = 0f;
+
+			//Climb slope - opposite is solved by pythagoras' formula
+			float moveDistance = Mathf.Abs(moveAmount.x);
+			float opposite = Mathf.Sin (slopeAngle * Mathf.Deg2Rad) * moveDistance;
+
+			//Something
+			if (moveAmount.y <= opposite) {
+				moveAmount.y = opposite;
+				moveAmount.x = Mathf.Cos (slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign (moveAmount.x);
+				collision.below = true;
+				collision.climbingSlope = true;
+				collision.slopeAngle = slopeAngle;
+			}
+			moveAmount.x += distanceToSlopeStart * Mathf.Sign (moveAmount.x);
+		}
+	}
+
+	private void handleSlopeDescent(ref Vector2 moveAmount){
+
 	}
 
 	private void checkVerticalCollisions(ref Vector2 moveAmount)
