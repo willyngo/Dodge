@@ -168,8 +168,12 @@ public class RaycastController : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// WILL BE DONE LATER, WE'RE NOT GONNA HAVE SLOPES IN OUR GAME I THINK
+	/// </summary>
+	/// <param name="moveAmount">Move amount.</param>
 	private void handleSlopeDescent(ref Vector2 moveAmount){
-
+		//TODO: I don't think we'll have slopes for now.
 	}
 
 	private void checkVerticalCollisions(ref Vector2 moveAmount)

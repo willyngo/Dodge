@@ -5,6 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(RaycastController))]
 public class Player : MonoBehaviour {
 
+	/* STATS */
+	public int health;
+
+	/* MOVEMENT */
 	public float gravity; //Amount of velocity y to fall
 	public float jumpHeight; //Height of jump
 	public float speed; //Horizontal movement speed
@@ -26,6 +30,8 @@ public class Player : MonoBehaviour {
 		render = GetComponent<SpriteRenderer> ();
 		animator = GetComponent<Animator> ();
 
+		health = 3;
+
 		//Kinematic formula, solve for acceleration going down
 		gravity = -(2 * 2.5f) / Mathf.Pow(0.32f, 2);
 		speed = 5f;
@@ -42,6 +48,16 @@ public class Player : MonoBehaviour {
 
 		//Checks current state of game obj and makes adjustment to velocity if necessary
 		checkState ();
+	}
+
+	/// <summary>
+	/// Maybe game master file should keep track of player's health.
+	/// </summary>
+	private void ReduceHealth(){
+		health--;
+		if (health <= 0) {
+			//Call EndGame() method from gamemaster file.
+		}
 	}
 
 	//Called in update()
