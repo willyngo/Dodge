@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 89439f4402cb1164ab9891b0279c1931
+  - enabled: 1
+    path: Assets/Scenes/GameWilly.unity
+    guid: 71dbf2029befc6c4995eeb34dff63ef1
