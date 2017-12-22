@@ -8,6 +8,7 @@ public class OptionsMenu : MonoBehaviour {
 
 	public AudioMixer audioMixer;
 
+	// Holds all available resolutions supported by your computer.
 	Resolution[] resolutions;
 
 	public Dropdown resolutionDropdown;
@@ -16,10 +17,12 @@ public class OptionsMenu : MonoBehaviour {
 	{
 		resolutions = Screen.resolutions;
 
+		// Clear the preset options.
 		resolutionDropdown.ClearOptions ();
 
 		List<string> options = new List<string> ();
 
+		// Populate resolutions dropdown.
 		int currentResolutionIndex = 0;
 		for (int i = 0; i < resolutions.Length; i++) {
 			string option = resolutions [i].width + " x " + resolutions [i].height;

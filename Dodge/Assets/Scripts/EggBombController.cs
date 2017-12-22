@@ -20,10 +20,15 @@ public class EggBombController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag.Equals("Ground")) {
+			// Stops the vertical movement of the bomb.
 			rigidBody.isKinematic = true;
 			rigidBody.velocity = Vector2.zero;
+
+			// Plays the explosion animation.
 			anim.Play ("Explosion");
-			Destroy(gameObject, 1); // Destroyed after 1 second
+
+			// GameObject destroyed after 1 second
+			Destroy(gameObject, 1); 
 		}
 	}
 
