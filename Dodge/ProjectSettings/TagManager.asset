@@ -17,7 +17,7 @@ TagManager:
   - 
   - Player
   - Level
-  - 
+  - Trap
   - 
   - 
   - 
@@ -42,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Environment
+    uniqueID: 2349169609
+    locked: 0
+  - name: Player
+    uniqueID: 4052253763
     locked: 0

@@ -6,6 +6,7 @@ using UnityEngine;
 public class RaycastController : MonoBehaviour {
 
 	public LayerMask collisionMask; //Layer in which to detect a collision
+	public LayerMask trapMask;
 
 	public const float widthBuffer = .015f; //Buffer distance
 	private const float dstBetweenRays = .25f; //Should have 4 rays for each side
@@ -113,9 +114,14 @@ public class RaycastController : MonoBehaviour {
 
 			//Create raycast
 			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, collisionMask);
+			RaycastHit2D trapHit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, trapMask);
 
 			//Shows raycast in scene viewer
 			Debug.DrawRay (rayOrigin, rayDirection, Color.red);
+
+			if (trapHit) {
+				Debug.Log ("HIT BY TRAP");
+			}
 
 			if (hit) {
 				//If already colliding with obstacle, leave as is.
