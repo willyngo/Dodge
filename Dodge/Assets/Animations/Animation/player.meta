@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Dodge/Assets/Animations/Animation/player.meta
 guid: 6cb4173110bc08f4d8d310ccffc47c55
 folderAsset: yes
 timeCreated: 1513462885
+=======
+guid: 5c2c7de44445342459809a7decbee9c5
+folderAsset: yes
+timeCreated: 1513553024
+>>>>>>> shifat:Dodge/Assets/Prefabs.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}
