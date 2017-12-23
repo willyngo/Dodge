@@ -19,7 +19,8 @@ public class EggBombController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag.Equals("Ground")) {
+		if (other.gameObject.tag.Equals("Ground")
+			|| other.gameObject.tag.Equals("Player")) {
 			// Stops the vertical movement of the bomb.
 			rigidBody.isKinematic = true;
 			rigidBody.velocity = Vector2.zero;

@@ -13,7 +13,7 @@ public class CeilingController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (gameObject.transform.position.y <= -4.04 
+		if (gameObject.transform.position.y <= -4.04 && gameObject.transform.position.y >= -4.30
 			&& player.transform.position.x >= -4.7 && player.transform.position.y <= -3.079) {
 			Debug.Log ("SQUASHED");
 		}
