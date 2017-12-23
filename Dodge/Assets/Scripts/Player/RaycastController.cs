@@ -114,14 +114,11 @@ public class RaycastController : MonoBehaviour {
 
 			//Create raycast
 			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, collisionMask);
-			RaycastHit2D trapHit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, trapMask);
+//			RaycastHit2D trapHit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, trapMask);
 
 			//Shows raycast in scene viewer
 			Debug.DrawRay (rayOrigin, rayDirection, Color.red);
 
-			if (trapHit) {
-				Debug.Log ("HIT BY TRAP");
-			}
 
 			if (hit) {
 				//If already colliding with obstacle, leave as is.

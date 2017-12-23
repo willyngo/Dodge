@@ -46,6 +46,12 @@ TagManager:
   - name: Environment
     uniqueID: 2349169609
     locked: 0
+  - name: Behind
+    uniqueID: 591731303
+    locked: 0
   - name: Player
     uniqueID: 4052253763
+    locked: 0
+  - name: Front
+    uniqueID: 1941485819
     locked: 0

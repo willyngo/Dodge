@@ -1578,6 +1578,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114426121009725380, guid: 85d5d7cdaea1a74488a15b228b04e3a3,
+        type: 2}
+      propertyPath: playerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 212992896081553508, guid: 85d5d7cdaea1a74488a15b228b04e3a3,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212992896081553508, guid: 85d5d7cdaea1a74488a15b228b04e3a3,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
   m_IsPrefabParent: 0
