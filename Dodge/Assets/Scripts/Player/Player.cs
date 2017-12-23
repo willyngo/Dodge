@@ -53,10 +53,18 @@ public class Player : MonoBehaviour {
 	/// <summary>
 	/// Maybe game master file should keep track of player's health.
 	/// </summary>
-	private void ReceiveDamage(){
+	public void ReceiveDamage(){
 		health--;
+		Debug.Log ("HEALTH: " + health);
 		if (health <= 0) {
 			//Call EndGame() method from gamemaster file.
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.tag == "Trap") {
+			ReceiveDamage ();
 		}
 	}
 

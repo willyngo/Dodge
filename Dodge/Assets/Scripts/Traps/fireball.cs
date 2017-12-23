@@ -5,7 +5,7 @@ using UnityEngine;
 public class fireball : MonoBehaviour {
 
 	bool contact; //
-	public LayerMask playerMask;
+	public LayerMask collisionMask;
 
 	public Vector2 velocity;
 	public BoxCollider2D box;
@@ -23,34 +23,21 @@ public class fireball : MonoBehaviour {
 		if (!contact) {
 			Move ();
 		}
-
-		SendRaycast ();
 	}
 
+
 	private void Move(){
+		//Moves left for now
 		velocity.x = -1f;
 		transform.Translate (velocity * Time.deltaTime);
 	}
 
-	private void SendRaycast(){
-		Bounds bounds = box.bounds;
-		Vector2 left = new Vector2 (bounds.min.x, bounds.max.y - bounds.extents.y);
-
-		RaycastHit2D leftHit = Physics2D.Raycast (left, Vector2.left, 0f, playerMask);
-
-		Debug.DrawRay (left, Vector2.left, Color.red);
-
-		if (leftHit) {
-//			Debug.Log ("HIT PLAYER");
-			contact = true;
-			OnContact ();
-		}
-	}
-
-	private void OnContact(){	
-		anim.SetTrigger ("contact");
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		contact = true; //so Move() in Update() doesn't run
+		box.enabled = false; //take out lingering collider box
+		anim.Play ("fireball_contact");
 		Destroy (this.gameObject, 1f);
+//		Debug.Log ("FIRE HIT");
 	}
-
-
 }
