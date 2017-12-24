@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CeilingSpawner : MonoBehaviour {
+public class PrefabsSpawnerAtPrefabPosition : MonoBehaviour {
 
 	private float nextSpawn = 0;
 	public GameObject[] prefabsToSpawn;

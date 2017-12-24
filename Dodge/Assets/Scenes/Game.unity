@@ -2088,16 +2088,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114199376941428338, guid: d7234173bc6782f4a8af29d38c8bf920,
-        type: 2}
-      propertyPath: spawnRate
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114199376941428338, guid: d7234173bc6782f4a8af29d38c8bf920,
-        type: 2}
-      propertyPath: randomDelay
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7234173bc6782f4a8af29d38c8bf920, type: 2}
   m_IsPrefabParent: 0

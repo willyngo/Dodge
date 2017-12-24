@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4928416657862280}
-  - component: {fileID: 114199376941428338}
+  - component: {fileID: 114034631590689332}
   m_Layer: 0
   m_Name: CeilingSpawnPoint
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114199376941428338
+--- !u!114 &114034631590689332
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1652728340863056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c385560a546944faea609fe78177cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e13113d796a2cf4ab687b67bc85d219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prefabsToSpawn:
@@ -56,5 +56,5 @@ MonoBehaviour:
   - {fileID: 1277922488069902, guid: 327b6aef264fe914c933f58c2cb7778f, type: 2}
   - {fileID: 1815471061070442, guid: 500a296c64d0d004f92b65afa825e9b5, type: 2}
   - {fileID: 1476291968052446, guid: 6b32b001db70b86499a25a9e147ba61b, type: 2}
-  spawnRate: 1
-  randomDelay: 1
+  spawnRate: 3
+  randomDelay: 2

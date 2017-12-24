@@ -51,10 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d11fb37e1d5a0469c2b5a2e46271af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabsToSpawn:
-  - {fileID: 1160095956815598, guid: 38d71a2b952b36049a5fd2f81248e1bb, type: 2}
-  - {fileID: 1277922488069902, guid: 327b6aef264fe914c933f58c2cb7778f, type: 2}
-  - {fileID: 1815471061070442, guid: 500a296c64d0d004f92b65afa825e9b5, type: 2}
-  - {fileID: 1476291968052446, guid: 6b32b001db70b86499a25a9e147ba61b, type: 2}
+  prefabsToSpawn: []
   spawnRate: 3
   randomDelay: 2
