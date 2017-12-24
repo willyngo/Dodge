@@ -51,16 +51,17 @@ public class Player : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Maybe game master file should keep track of player's health.
+	/// Decrements health
 	/// </summary>
 	public void ReceiveDamage(){
 		health--;
 		Debug.Log ("HEALTH: " + health);
-		if (health <= 0) {
-			//Call EndGame() method from gamemaster file.
-		}
 	}
 
+	/// <summary>
+	/// This trigger will check for collision with traps. Not the level.
+	/// </summary>
+	/// <param name="other">Other.</param>
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Trap") {
@@ -68,7 +69,10 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	//Called in update()
+	/// <summary>
+	/// Moves the player. Raycast only checks for level collision such as walls and floors, not traps.
+	/// </summary>
+	/// <param name="moveAmount">Move amount.</param>
 	public void Move(Vector2 moveAmount)
 	{
 		//Updates raycast position as game object moves.
@@ -88,6 +92,7 @@ public class Player : MonoBehaviour {
 	/// <summary>
 	/// This method checks the state of the game object after moving and makes any approriate changes 
 	/// should it encounter states such as being airborne, grounded or interacting with incoming obstacle.
+	/// Called after moving
 	/// </summary>
 	private void checkState()
 	{

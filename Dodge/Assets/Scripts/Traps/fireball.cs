@@ -5,7 +5,7 @@ using UnityEngine;
 public class fireball : MonoBehaviour {
 
 	bool contact; //
-	public LayerMask collisionMask;
+//	public LayerMask collisionMask;
 
 	public Vector2 velocity;
 	public BoxCollider2D box;

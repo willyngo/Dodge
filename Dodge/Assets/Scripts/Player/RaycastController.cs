@@ -93,7 +93,7 @@ public class RaycastController : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Checks for horizontal collisions.
+	/// Checks for horizontal collisions ON WALLS.
 	/// </summary>
 	/// <param name="moveAmount">Move amount.</param>
 	private void checkHorizontalCollision (ref Vector2 moveAmount)
@@ -112,7 +112,6 @@ public class RaycastController : MonoBehaviour
 
 			//Create raycast
 			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, collisionMask);
-//			RaycastHit2D trapHit = Physics2D.Raycast (rayOrigin, rayDirection, rayLength, trapMask);
 
 			//Shows raycast in scene viewer
 			Debug.DrawRay (rayOrigin, rayDirection, Color.red);
@@ -137,7 +136,10 @@ public class RaycastController : MonoBehaviour
 	}
 
 
-
+	/// <summary>
+	/// Checks vertical collision for FLOORS and CEILINGS
+	/// </summary>
+	/// <param name="moveAmount">Move amount.</param>
 	private void checkVerticalCollisions (ref Vector2 moveAmount)
 	{
 		float directionY = Mathf.Sign (moveAmount.y);
@@ -170,7 +172,7 @@ public class RaycastController : MonoBehaviour
 		public bool left, right;
 
 		public int collDirection;
-		public bool standingOnPlatform;
+		public bool standingOnPlatform; //Not used
 
 		public void Reset ()
 		{
