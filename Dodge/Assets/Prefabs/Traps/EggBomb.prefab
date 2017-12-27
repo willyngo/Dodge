@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 95978702149547862}
   m_Layer: 0
   m_Name: EggBomb
-  m_TagString: Enemy
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1623781549388114}
   m_LocalRotation: {x: -0, y: -0, z: 0.70755774, w: 0.7066556}
-  m_LocalPosition: {x: 7.9479628, y: 5.3844404, z: 1.1484514}
+  m_LocalPosition: {x: 7.9479628, y: 5.3844404, z: 1}
   m_LocalScale: {x: 2.6656532, y: 2.6656532, z: 2.6656523}
   m_Children: []
   m_Father: {fileID: 0}
