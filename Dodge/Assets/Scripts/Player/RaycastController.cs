@@ -116,13 +116,12 @@ public class RaycastController : MonoBehaviour
 			//Shows raycast in scene viewer
 			Debug.DrawRay (rayOrigin, rayDirection, Color.red);
 
-
 			if (hit) {
 				//If already colliding with obstacle, leave as is.
 				if (hit.distance == 0) {
 					continue;
 				}
-
+				
 				//Reduce velocity.x, prevent from going through obstacle
 				moveAmount.x = (hit.distance - widthBuffer) * directionX;
 				rayLength = hit.distance;
@@ -172,7 +171,8 @@ public class RaycastController : MonoBehaviour
 		public bool left, right;
 
 		public int collDirection;
-		public bool standingOnPlatform; //Not used
+		public bool standingOnPlatform;
+		//Not used
 
 		public void Reset ()
 		{

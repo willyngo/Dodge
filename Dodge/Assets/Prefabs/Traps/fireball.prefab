@@ -117,9 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808126daf0cba034589686c30df851a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 768
   velocity: {x: 0, y: 0}
   box: {fileID: 0}
   anim: {fileID: 0}

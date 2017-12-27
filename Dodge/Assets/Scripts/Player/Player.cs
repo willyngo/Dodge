@@ -20,9 +20,9 @@ public class Player : MonoBehaviour {
 	public Vector2 velocity;
 	public Vector2 directionalInput;
 
-	public RaycastController rc;
-	public SpriteRenderer render;
-	public Animator animator;
+	private RaycastController rc;
+	private SpriteRenderer render;
+	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
