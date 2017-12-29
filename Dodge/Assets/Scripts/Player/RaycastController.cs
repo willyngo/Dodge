@@ -21,7 +21,7 @@ public class RaycastController : MonoBehaviour
 	public float raySpacing_h;
 	public float raySpacing_v;
 
-	public BoxCollider2D box;
+	private BoxCollider2D box;
 	//box collider of game object
 
 	//Raycast origins
@@ -145,7 +145,7 @@ public class RaycastController : MonoBehaviour
 		float rayLength = Mathf.Abs (moveAmount.y) + widthBuffer;
 		Vector2 rayDirection = Vector2.up * directionY;
 
-		//firing raycast
+//		//firing raycast
 		for (int i = 0; i < rayCount_v; i++) {
 			Vector2 rayOrigin = (directionY == -1) ? botLeft : topLeft;
 			rayOrigin += Vector2.right * (raySpacing_v * i + moveAmount.x);

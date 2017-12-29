@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(RaycastController))]
-public class Player : MonoBehaviour {
+[RequireComponent (typeof(RaycastController))]
+public class Player : MonoBehaviour
+{
 
 	/* STATS */
 	public int health;
+	public bool invincible;
+	public bool hurt;
 
 	/* MOVEMENT */
-	public float gravity; //Amount of velocity y to fall
-	public float jumpHeight; //Height of jump
-	public float speed; //Horizontal movement speed
+	public float gravity;
+	//Amount of velocity y to fall
+	public float jumpHeight;
+	//Height of jump
+	public float speed;
+	//Horizontal movement speed
 
-	public int facing = 1; //1 means facing right, -1 means left
+	public int facing = 1;
+	//1 means facing right, -1 means left
 	public bool isAirborne;
 	public bool isDoubleJumping;
 
@@ -25,7 +32,8 @@ public class Player : MonoBehaviour {
 	private Animator animator;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		rc = GetComponent<RaycastController> ();
 		render = GetComponent<SpriteRenderer> ();
 		animator = GetComponent<Animator> ();
@@ -33,54 +41,68 @@ public class Player : MonoBehaviour {
 		health = 3;
 
 		//Kinematic formula, solve for acceleration going down
-		gravity = -(2 * 2.5f) / Mathf.Pow(0.32f, 2);
-		speed = 5f;
-		jumpHeight = 12.5f;
+		gravity = -(2 * 2.5f) / Mathf.Pow (0.32f, 2);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		GetPlayerInput ();
-		velocity.x = directionalInput.x * speed;
-		velocity.y += gravity * Time.deltaTime; //Gravity makes game obj fall at all times
-		//Move game object'
-		Move (velocity * Time.deltaTime);
-
+	void Update ()
+	{
+		//Hurt boolean gives this 'pause' so that player doesn't keep moving
+		//during the reeling animation of being hit by a trap.
+		if (!hurt) {
+			GetPlayerInput ();
+			velocity.x = directionalInput.x * speed;
+			velocity.y += gravity * Time.deltaTime; //Gravity makes game obj fall at all times
+			//Move game object'
+			Move (velocity * Time.deltaTime);
+		}
 		//Checks current state of game obj and makes adjustment to velocity if necessary
 		checkState ();
 	}
 
 	/// <summary>
-	/// Decrements health
-	/// </summary>
-	public void ReceiveDamage(){
-		health--;
-		Debug.Log ("HEALTH: " + health);
-	}
-
-	/// <summary>
 	/// This trigger will check for collision with traps. Not the level.
+	/// If collided with traps, player's health reduces and becomes invulnerable
+	/// for a short while.
 	/// </summary>
 	/// <param name="other">Other.</param>
-	void OnTriggerEnter2D(Collider2D other)
+	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.tag == "Trap") {
-			ReceiveDamage ();
+		if (!invincible) {
+			if (other.tag == "Trap") {
+				receiveDamage ();
+			}
 		}
+	}
+
+	private void receiveDamage()
+	{
+		animator.Play ("player_hurt");
+		//Receive damage
+		health--;
+		Debug.Log ("HEALTH: " + health);
+
+		//Makes slight pause and prevent player from moving when hit
+		hurt = true;
+		Invoke ("resetHurt", 0.2f);
+
+		//Become invulnerable for 2 seconds
+		invincible = true;
+		Invoke ("resetInvincible", 2);
 	}
 
 	/// <summary>
 	/// Moves the player. Raycast only checks for level collision such as walls and floors, not traps.
 	/// </summary>
 	/// <param name="moveAmount">Move amount.</param>
-	public void Move(Vector2 moveAmount)
+	public void Move (Vector2 moveAmount)
 	{
 		//Updates raycast position as game object moves.
 		rc.UpdateRayOrigins ();
 		rc.collision.Reset ();
 
 		//direction player is facing; right = 1, left = -1
-		setFacingDirection();
+		setFacingDirection ();
 
 		//Check collisions - if found, moveAmount velocity will be reduced appropriately
 		rc.checkCollisions (ref moveAmount);
@@ -94,7 +116,7 @@ public class Player : MonoBehaviour {
 	/// should it encounter states such as being airborne, grounded or interacting with incoming obstacle.
 	/// Called after moving
 	/// </summary>
-	private void checkState()
+	private void checkState ()
 	{
 		//If grounded, reset airborne and double jump state
 		if (rc.collision.below) {
@@ -110,12 +132,21 @@ public class Player : MonoBehaviour {
 			velocity.y = 0f;
 			Debug.Log ("Hit ceiling");
 		}
+
+		//Apparantly, Color isn't something you can modify like transform.position
+		Color c = render.color;
+		if (invincible) {
+			c.a = 0.5f;
+		} else {
+			c.a = 1f;
+		}
+		render.color = c;
 	}
 
 	/// <summary>
 	/// Sets the facing direction of game object
 	/// </summary>
-	private void setFacingDirection()
+	private void setFacingDirection ()
 	{
 		//Keeps game object facing direction when not moving
 		if (velocity.x != 0) {
@@ -129,11 +160,28 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	/// <summary>
+	/// Resets the invincble boolean. Used by OnTriggerEnter2D, to return player to vulnerable state 
+	/// after slight moment of invincibility.
+	/// </summary>
+	private void resetInvincible ()
+	{
+		invincible = false;
+	}
+
+	/// <summary>
+	/// reset hurt boolean. Used in update(), to allow player to move again.
+	/// </summary>
+	private void resetHurt ()
+	{
+		hurt = false;
+	}
+
 	/**
 	 * USER INPUT
 	 * 
 	 */
-	private void GetPlayerInput()
+	private void GetPlayerInput ()
 	{
 		this.directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		animator.SetFloat ("velocityX", Mathf.Abs (directionalInput.x));
@@ -144,7 +192,7 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	private void OnJumpDown()
+	private void OnJumpDown ()
 	{
 		if (rc.collision.below) {
 			isAirborne = true;
