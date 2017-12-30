@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 	public int health;
 	public bool invincible;
 	public bool hurt;
+	public int coins; //Not sure which should keep track of coins for now.
 
 	/* MOVEMENT */
 	public float gravity;
@@ -70,13 +71,20 @@ public class Player : MonoBehaviour
 	{
 		if (!invincible) {
 			if (other.tag == "Trap") {
-				receiveDamage ();
+				ReceiveDamage ();
+			} else if (other.tag == "Item") {
+				PickupCoin ();
 			}
 		}
 	}
 
-	private void receiveDamage()
+	private void PickupCoin(){
+		coins++;
+	}
+
+	private void ReceiveDamage()
 	{
+		velocity.y = 0;
 		animator.Play ("player_hurt");
 		//Receive damage
 		health--;

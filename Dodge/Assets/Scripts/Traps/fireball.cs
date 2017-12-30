@@ -34,10 +34,12 @@ public class fireball : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		contact = true; //so Move() in Update() doesn't run
-		box.enabled = false; //take out lingering collider box
-		anim.Play ("fireball_contact");
-		Destroy (this.gameObject, 1f);
+		if(other.tag != "Item"){
+			contact = true; //so Move() in Update() doesn't run
+			box.enabled = false; //take out lingering collider box
+			anim.Play ("fireball_contact");
+			Destroy (this.gameObject, 1f);
 //		Debug.Log ("FIRE HIT");
+		}
 	}
 }
