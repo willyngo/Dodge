@@ -120,9 +120,9 @@ GameObject:
   - component: {fileID: 50632980163129208}
   - component: {fileID: 114311973035495226}
   - component: {fileID: 114780129389797272}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Ceiling_4
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

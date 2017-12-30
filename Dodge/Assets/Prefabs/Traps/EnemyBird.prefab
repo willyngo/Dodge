@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 95622854064041440}
   - component: {fileID: 114604556103651138}
   - component: {fileID: 61037493251940024}
+  - component: {fileID: 114545500645804716}
   m_Layer: 0
   m_Name: EnemyBird
   m_TagString: Enemy
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333682159637266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.27, y: 1.08, z: 1}
+  m_LocalPosition: {x: -10.5, y: 3.96, z: 1}
   m_LocalScale: {x: 0.24209179, y: 0.24209179, z: 0.24209179}
   m_Children:
   - {fileID: 4641774943223926}
@@ -130,6 +131,17 @@ MonoBehaviour:
     type: 2}
   spawnRate: 1
   randomDelay: 1
+--- !u!114 &114545500645804716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333682159637266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf7367aed95277a4b9b7af404241fe76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114604556103651138
 MonoBehaviour:
   m_ObjectHideFlags: 1
