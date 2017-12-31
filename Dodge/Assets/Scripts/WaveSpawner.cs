@@ -101,6 +101,7 @@ public class WaveSpawner : MonoBehaviour {
 		yield break;
 	}
 
+	// TODO: Check which type of enemy we need to spawn. Spawn accordingly.
 	void SpawnEnemy(Transform _enemy){
 		// Spawn Enemy
 		Debug.Log("Spawning Enemy: " + _enemy.name);

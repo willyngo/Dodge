@@ -8,9 +8,9 @@ public class Wave {
 	public string name;
 
 	// Reference to enemy prefab
-	public Transform enemy;
+	public Transform enemy; // TODO: Create list of enemies
 
-	// Countdown to next wave
+	// Number of enemies
 	public int count;
 	public float rate;
 
