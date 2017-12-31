@@ -34,7 +34,7 @@ public class fireball : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.tag != "Item"){
+		if(other.tag == "Player" || other.tag == "Level"){
 			contact = true; //so Move() in Update() doesn't run
 			box.enabled = false; //take out lingering collider box
 			anim.Play ("fireball_contact");

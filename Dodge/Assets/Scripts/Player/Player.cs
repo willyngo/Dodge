@@ -65,21 +65,21 @@ public class Player : MonoBehaviour
 	/// This trigger will check for collision with traps. Not the level.
 	/// If collided with traps, player's health reduces and becomes invulnerable
 	/// for a short while.
+	/// if item, then pick up
 	/// </summary>
 	/// <param name="other">Other.</param>
 	void OnTriggerEnter2D (Collider2D other)
 	{
+		
 		if (!invincible) {
 			if (other.tag == "Trap") {
 				ReceiveDamage ();
-			} else if (other.tag == "Item") {
-				PickupCoin ();
 			}
 		}
-	}
 
-	private void PickupCoin(){
-		coins++;
+		if (other.tag == "Coin") {
+			coins++;
+		}
 	}
 
 	private void ReceiveDamage()
@@ -135,13 +135,16 @@ public class Player : MonoBehaviour
 			isAirborne = true;
 		}
 		animator.SetBool ("airborne", isAirborne); //Set sprite to airborne animation
+		//Falling animation HERE
 
-		if (rc.collision.above) { //If hit ceiling, set velocity.y to 0 to prevent accumulating
+		//If hit ceiling, set velocity.y to 0 to prevent accumulating
+		if (rc.collision.above) { 
 			velocity.y = 0f;
 			Debug.Log ("Hit ceiling");
 		}
 
 		//Apparantly, Color isn't something you can modify like transform.position
+		//Reduce transparency by half when hurt.
 		Color c = render.color;
 		if (invincible) {
 			c.a = 0.5f;

@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Trap
   - Item
+  - Coin
+  - Level
   layers:
   - Default
   - TransparentFX

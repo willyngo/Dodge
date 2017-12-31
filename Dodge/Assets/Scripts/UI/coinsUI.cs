@@ -10,9 +10,9 @@ public class coinsUI : MonoBehaviour
 
 	private int amountOfCoins;
 
-	private GameObject unit;
-	private GameObject tenfold;
-	private GameObject hundredfold;
+	private GameObject oneUI;
+	private GameObject tenUI;
+	private GameObject hundredUI;
 
 	public Sprite one;
 	public Sprite two;
@@ -29,9 +29,9 @@ public class coinsUI : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		unit = GameObject.Find ("count_one");
-		tenfold = GameObject.Find ("count_ten");
-		hundredfold = GameObject.Find ("count_hundred");
+		oneUI = GameObject.Find ("count_one");
+		tenUI = GameObject.Find ("count_ten");
+		hundredUI = GameObject.Find ("count_hundred");
 	}
 	
 	// Update is called once per frame
@@ -52,9 +52,9 @@ public class coinsUI : MonoBehaviour
 			}
 		}
 
-		setAmount (unit, ones);
-		setAmount (tenfold, tens);
-		setAmount (hundredfold, hundreds);
+		setAmount (oneUI, ones);
+		setAmount (tenUI, tens);
+		setAmount (hundredUI, hundreds);
 	}
 
 	void setAmount (GameObject go, int amount)
