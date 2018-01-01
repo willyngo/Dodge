@@ -60,24 +60,19 @@ public class TimerUI : MonoBehaviour {
 	private void UpdateTimerUI(float currentTime)
 	{
 		//Convert time to millisecond
-		int milliseconds = Mathf.RoundToInt(((currentTime % 1) * 100)  % 60);
+		int milliseconds = (int) ((currentTime % 1) * 100);
 		millisecond_1 = milliseconds % 10;
 		millisecond_10 = milliseconds / 10;
-		//SetUI elements
-		SetAmount (milli_one, millisecond_1);
-		SetAmount (milli_ten, millisecond_10);
+
 
 		//Convert time to seconds
-		int seconds = Mathf.RoundToInt(currentTime % 60);
+		int seconds = (int)currentTime % 60;
 		second_1 = seconds % 10;
 		second_10 = (seconds % 60 == 0) ? 0 : seconds / 10;
-		//SetUI elements
-		SetAmount (second_one, second_1);
-		SetAmount (second_ten, second_10);
 
 		//When time goes above a minute
-		if (seconds > 59) {
-			int minutes = Mathf.RoundToInt (currentTime / 60);
+		if (currentTime > 59) {
+			int minutes = (int) currentTime / 60;
 			minute_1 = minutes % 10;
 			SetAmount (minute_one, minute_1);
 
@@ -87,6 +82,14 @@ public class TimerUI : MonoBehaviour {
 				SetAmount (minute_ten, minute_10);
 			}
 		}
+
+		//SetUI elements
+		SetAmount (milli_one, millisecond_1);
+		SetAmount (milli_ten, millisecond_10);
+
+		//SetUI elements
+		SetAmount (second_one, second_1);
+		SetAmount (second_ten, second_10);
 	}
 
 	/// <summary>
