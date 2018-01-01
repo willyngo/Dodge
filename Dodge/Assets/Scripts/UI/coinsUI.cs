@@ -3,27 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class coinsUI : MonoBehaviour
+public class CoinsUI : MonoBehaviour
 {
-
-	public Player player;
-
-	private int amountOfCoins;
-
+	//UI elements
 	private GameObject oneUI;
 	private GameObject tenUI;
 	private GameObject hundredUI;
 
-	public Sprite one;
-	public Sprite two;
-	public Sprite three;
-	public Sprite four;
-	public Sprite five;
-	public Sprite six;
-	public Sprite seven;
-	public Sprite eight;
-	public Sprite nine;
-	public Sprite zero;
+	//Sprites images - Is this how it's supposed to be done???
+	[SerializeField]
+	private Sprite one;
+	[SerializeField]
+	private Sprite two;
+	[SerializeField]
+	private Sprite three;
+	[SerializeField]
+	private Sprite four;
+	[SerializeField]
+	private Sprite five;
+	[SerializeField]
+	private Sprite six;
+	[SerializeField]
+	private Sprite seven;
+	[SerializeField]
+	private Sprite eight;
+	[SerializeField]
+	private Sprite nine;
+	[SerializeField]
+	private Sprite zero;
 
 
 	// Use this for initialization
@@ -33,11 +40,14 @@ public class coinsUI : MonoBehaviour
 		tenUI = GameObject.Find ("count_ten");
 		hundredUI = GameObject.Find ("count_hundred");
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+	/// <summary>
+	/// Called in the GameManager's update(). This method seperates the 
+	/// amount of coins in digits and updates each coins UI elements.
+	/// </summary>
+	/// <param name="amountOfCoins">Amount of coins.</param>
+	public void UpdateCoinUI(int amountOfCoins)
 	{
-		amountOfCoins = player.coins;
 		int ones = 0;
 		int tens = 0;
 		int hundreds = 0;
@@ -52,12 +62,12 @@ public class coinsUI : MonoBehaviour
 			}
 		}
 
-		setAmount (oneUI, ones);
-		setAmount (tenUI, tens);
-		setAmount (hundredUI, hundreds);
+		SetAmount (oneUI, ones);
+		SetAmount (tenUI, tens);
+		SetAmount (hundredUI, hundreds);
 	}
 
-	void setAmount (GameObject go, int amount)
+	void SetAmount (GameObject go, int amount)
 	{
 		switch (amount) {
 		case 0:

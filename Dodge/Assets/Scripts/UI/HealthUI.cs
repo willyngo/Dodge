@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour {
 
-	public Player player;
 	private GameObject heart1;
 	private GameObject heart2;
 	private GameObject heart3;
 
-	public Sprite filled;
-	public Sprite empty;
+	[SerializeField]
+	private Sprite filled;
+	[SerializeField]
+	private Sprite empty;
 
 	// Use this for initialization
 	void Start () {
@@ -20,14 +21,14 @@ public class HealthUI : MonoBehaviour {
 		heart2 = GameObject.Find ("heart2");
 		heart3 = GameObject.Find ("heart3");
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (player.health == 2) {
+
+	public void UpdateHealthUI(int health)
+	{
+		if (health == 2) {
 			heart3.GetComponent<Image> ().sprite = empty;
-		} else if (player.health == 1) {
+		} else if (health == 1) {
 			heart2.GetComponent<Image> ().sprite = empty;
-		} else if (player.health == 0) {
+		} else if (health == 0) {
 			heart1.GetComponent<Image> ().sprite = empty;
 		}
 	}

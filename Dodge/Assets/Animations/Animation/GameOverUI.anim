@@ -43,13 +43,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 222
+        value: 281
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 75
+        value: 96
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -65,13 +65,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: -233
+        value: -291
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: -24
+        value: -88.4
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -87,13 +87,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: -298.40002
+        value: -356.40002
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: -89.40001
+        value: -153.80003
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -102,6 +102,28 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
     path: MenuBtn
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -211
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1
+        value: 400
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchoredPosition.x
+    path: ScoreText
     classID: 224
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -136,6 +158,13 @@ AnimationClip:
     - serializedVersion: 2
       path: 137192879
       attribute: 538195251
+      script: {fileID: 0}
+      typeID: 224
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 596210011
+      attribute: 1460864421
       script: {fileID: 0}
       typeID: 224
       customType: 0
@@ -189,13 +218,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 222
+        value: 281
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: 75
+        value: 96
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -211,13 +240,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: -233
+        value: -291
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: -24
+        value: -88.4
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -233,13 +262,13 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: -298.40002
+        value: -356.40002
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
         time: 1
-        value: -89.40001
+        value: -153.80003
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -248,6 +277,28 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
     path: MenuBtn
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: -211
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      - serializedVersion: 2
+        time: 1
+        value: 400
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchoredPosition.x
+    path: ScoreText
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []
