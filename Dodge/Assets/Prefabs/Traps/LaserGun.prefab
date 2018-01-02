@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserHit: {fileID: 4224382828985052}
+  timer: 3
 --- !u!120 &120486919895740870
 LineRenderer:
   m_ObjectHideFlags: 1
