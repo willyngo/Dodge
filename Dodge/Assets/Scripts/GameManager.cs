@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 	void Update () 
 	{
 		//Updates
-//		coinScript.gameObject.GetComponent<CoinsUI>().UpdateCoinUI (player.coins);
+		coinScript.gameObject.GetComponent<MoneyUI>().UpdateCoinUI (player.coins);
 		healthScript.gameObject.GetComponent<HealthUI>().UpdateHealthUI (player.health);
 
 		//If player health reaches 0, game is over;
