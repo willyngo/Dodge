@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class EggBombController : MonoBehaviour {
 
-	public Animator anim;
-
-	public Rigidbody2D rigidBody;
+	public GameObject explosionEffect;
 
 	void Start() {
-		rigidBody = GetComponent<Rigidbody2D>();
-		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -21,14 +17,10 @@ public class EggBombController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag.Equals("Ground")
 			|| other.gameObject.tag.Equals("Player")) {
-			// Stops the vertical movement of the bomb and disables trigger detection with player.
-			Destroy (rigidBody);
 
-			// Plays the explosion animation.
-			anim.Play ("Explosion");
+			Instantiate (explosionEffect, transform.position, transform.rotation);
 
-			// GameObject destroyed after 1 second
-			Destroy(gameObject, 1); 
+			Destroy (gameObject);
 		}
 	}
 
