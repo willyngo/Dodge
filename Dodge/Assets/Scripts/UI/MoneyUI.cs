@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CoinsUI : MonoBehaviour
-{
+public class MoneyUI : MonoBehaviour {
+
 	//UI elements
 	private GameObject oneUI;
 	private GameObject tenUI;

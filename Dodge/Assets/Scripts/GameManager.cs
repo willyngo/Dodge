@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CoinsUI))]
 [RequireComponent(typeof(HealthUI))]
 [RequireComponent(typeof(GameOverUI))]
 public class GameManager : MonoBehaviour {
@@ -10,9 +9,9 @@ public class GameManager : MonoBehaviour {
 	public Player player;
 
 	public GameObject gameOverScreen;
-	public CoinsUI coinScript;
-	public HealthUI healthScript;
-	public GameOverUI gameOverScript;
+	public GameObject coinScript;
+	public GameObject healthScript;
+	public GameObject gameOverScript;
 
 	// Use this for initialization
 	void Start () 
@@ -31,8 +30,8 @@ public class GameManager : MonoBehaviour {
 	void Update () 
 	{
 		//Updates
-		coinScript.UpdateCoinUI (player.coins);
-		healthScript.UpdateHealthUI (player.health);
+//		coinScript.gameObject.GetComponent<CoinsUI>().UpdateCoinUI (player.coins);
+		healthScript.gameObject.GetComponent<HealthUI>().UpdateHealthUI (player.health);
 
 		//If player health reaches 0, game is over;
 		if (player.health == 0) {
@@ -48,6 +47,6 @@ public class GameManager : MonoBehaviour {
 
 		//Display score, currentTime format X.00
 		float currentTime = Mathf.Round(100f * Time.timeSinceLevelLoad) / 100f;
-		gameOverScript.ShowScore (currentTime);
+		gameOverScript.gameObject.GetComponent<GameOverUI>().ShowScore (currentTime);
 	}
 }
