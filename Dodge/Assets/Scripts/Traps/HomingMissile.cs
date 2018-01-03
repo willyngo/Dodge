@@ -43,6 +43,10 @@ public class HomingMissile : MonoBehaviour {
 		if (other.gameObject.tag.Equals("Ground")
 			|| other.gameObject.tag.Equals("Player")) {
 
+			if (other.gameObject.tag.Equals ("Player")) {
+				other.gameObject.GetComponent<Player> ().ReceiveDamage ();
+			}
+
 			Instantiate (explosionEffect, transform.position, transform.rotation);
 
 			Destroy(gameObject); 

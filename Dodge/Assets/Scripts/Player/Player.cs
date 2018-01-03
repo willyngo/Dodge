@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 	public bool invincible;
 	public bool hurt;
 	public int coins; //Not sure which should keep track of coins for now.
+	public float invulnerableTime = 2f;
 
 	/* MOVEMENT */
 	public float gravity;
@@ -70,12 +71,12 @@ public class Player : MonoBehaviour
 	/// <param name="other">Other.</param>
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		
+		/*
 		if (!invincible) {
 			if (other.tag == "Trap") {
 				ReceiveDamage ();
 			}
-		}
+		}*/
 
 		if (other.tag == "Coin") {
 			coins++;
@@ -84,19 +85,21 @@ public class Player : MonoBehaviour
 
 	public void ReceiveDamage()
 	{
-		velocity.y = 0;
-		animator.Play ("player_hurt");
-		//Receive damage
-		health--;
-		Debug.Log ("HEALTH: " + health);
+		if (!invincible) {
+			velocity.y = 0;
+			animator.Play ("player_hurt");
+			//Receive damage
+			health--;
+			Debug.Log ("HEALTH: " + health);
 
-		//Makes slight pause and prevent player from moving when hit
-		hurt = true;
-		Invoke ("resetHurt", 0.2f);
+			//Makes slight pause and prevent player from moving when hit
+			hurt = true;
+			Invoke ("resetHurt", 0.2f);
 
-		//Become invulnerable for 2 seconds
-		invincible = true;
-		Invoke ("resetInvincible", 2);
+			//Become invulnerable for 2 seconds
+			invincible = true;
+			Invoke ("resetInvincible", invulnerableTime);
+		}
 	}
 
 	/// <summary>
