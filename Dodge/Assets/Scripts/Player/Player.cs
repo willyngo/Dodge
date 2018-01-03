@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
 		}
 	}
 
-	private void ReceiveDamage()
+	public void ReceiveDamage()
 	{
 		velocity.y = 0;
 		animator.Play ("player_hurt");
