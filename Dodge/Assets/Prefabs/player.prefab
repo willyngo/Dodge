@@ -104,7 +104,6 @@ MonoBehaviour:
   rayCount_v: 0
   raySpacing_h: 0
   raySpacing_v: 0
-  box: {fileID: 0}
   topLeft: {x: 0, y: 0}
   topRight: {x: 0, y: 0}
   botLeft: {x: 0, y: 0}
@@ -121,6 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  invincible: 0
+  hurt: 0
+  coins: 0
   gravity: 0
   jumpHeight: 12
   speed: 5
