@@ -170,6 +170,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -601,6 +611,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -1036,6 +1056,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -1091,6 +1121,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -1145,6 +1185,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -1289,6 +1339,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -1545,6 +1605,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -1599,6 +1669,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -1766,6 +1846,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -2207,6 +2297,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -2324,6 +2424,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -2469,6 +2579,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -2523,6 +2643,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -3112,6 +3242,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -3220,7 +3360,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1453712733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ad07c4e4d133f04191abd0d022d3213, type: 3}
+  m_Script: {fileID: 11500000, guid: 795e900285b68614b8bd8543e995fecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   one: {fileID: 21300002, guid: 5dfcbd4339b3c9e4598e7b3afd99209a, type: 3}
@@ -3439,6 +3579,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -3561,6 +3711,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -4002,6 +4162,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -4287,6 +4457,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -4341,6 +4521,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -4523,6 +4713,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -4902,6 +5102,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -5077,6 +5287,16 @@ Prefab:
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
   m_IsPrefabParent: 0
@@ -5146,6 +5366,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
@@ -5464,6 +5694,16 @@ Prefab:
     - target: {fileID: 1900081326715716, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
       propertyPath: m_TagString
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 1941485819
+      objectReference: {fileID: 0}
+    - target: {fileID: 212768339015136766, guid: 487c0ea64691a0e419f536c13cbeb163,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 487c0ea64691a0e419f536c13cbeb163, type: 2}
