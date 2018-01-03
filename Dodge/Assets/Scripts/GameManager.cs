@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CoinsUI))]
+[RequireComponent(typeof(HealthUI))]
+[RequireComponent(typeof(GameOverUI))]
 public class GameManager : MonoBehaviour {
 
 	public Player player;
 
-	[SerializeField]
-	private GameObject gameOverScreen;
-
+	public GameObject gameOverScreen;
 	public CoinsUI coinScript;
 	public HealthUI healthScript;
 	public GameOverUI gameOverScript;
