@@ -17,7 +17,7 @@ public class CeilingController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag.Equals ("Player") 
-			&& other.gameObject.transform.position.y <= -3.079) {
+			&& !other.gameObject.GetComponent<Player>().isAirborne) {
 			Debug.Log ("SQUASHED");
 		}
 	}

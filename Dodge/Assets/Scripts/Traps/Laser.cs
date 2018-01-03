@@ -8,6 +8,8 @@ public class Laser : MonoBehaviour {
 
 	public Transform laserHit;
 
+	public float timer = 3f;
+
 	// Use this for initialization
 	void Start () {
 		lineRenderer = GetComponent<LineRenderer> ();
@@ -22,5 +24,10 @@ public class Laser : MonoBehaviour {
 		laserHit.position = hit.point;
 		lineRenderer.SetPosition (0, transform.position);
 		lineRenderer.SetPosition (1, laserHit.position);
+
+		// Check if the laser hits the player.
+		if (hit.transform.gameObject.tag.Equals ("Player", System.StringComparison.InvariantCultureIgnoreCase)) {
+			hit.transform.gameObject.GetComponent<Player> ().ReceiveDamage ();
+		}
 	}
 }
