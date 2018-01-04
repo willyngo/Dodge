@@ -15,10 +15,13 @@ public class WaveSpawner : MonoBehaviour {
 	// Index to wave spawning
 	private int nextWave = 0;
 
-	public Transform[] spawnPoints;
+	public List<Transform> spawnPoints;
 
 	public float timeBetweenWaves = 5f;
 	private float waveCountdown;
+
+	[Range(0.0f, 1.0f)]
+	public float statMultiplier = 0.05f;
 
 	// Interval at which we search for enemies
 	private float searchCountdown = 1f;
@@ -46,7 +49,9 @@ public class WaveSpawner : MonoBehaviour {
 		if (waveCountdown <= 0) {
 			if (state != SpawnState.SPAWNING) {
 				// Start spawning wave
-				StartCoroutine(SpawnWave(waves[nextWave]));
+				if (waves != null && waves.Length > 0) {
+					StartCoroutine (SpawnWave (waves [nextWave]));
+				}
 			}
 		} else {
 			waveCountdown -= Time.deltaTime;
@@ -61,6 +66,10 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (nextWave + 1 > waves.Length - 1) {
 			// TODO: Add stat multiplier
+			timeBetweenWaves = timeBetweenWaves * statMultiplier;
+			for (int i = 0; i < waves.Length; i++) {
+				waves [i].rate = (waves [i].rate * statMultiplier) + waves [i].rate;
+			}
 
 			nextWave = 0;
 			Debug.Log ("ALL WAVES COMPLETE! Looping...");
@@ -88,9 +97,11 @@ public class WaveSpawner : MonoBehaviour {
 
 		state = SpawnState.SPAWNING;
 
+		int enemyCount = _wave.enemies.Length;
+
 		// Spawn
 		for (int i = 0; i < _wave.count; i++) {
-			SpawnEnemy (_wave.enemy);
+			SpawnEnemy (_wave.enemies[Random.Range(0, enemyCount)]);
 
 			// Wait few seconds before spawning next wave.
 			yield return new WaitForSeconds (1/_wave.rate);
@@ -101,18 +112,34 @@ public class WaveSpawner : MonoBehaviour {
 		yield break;
 	}
 
-	// TODO: Check which type of enemy we need to spawn. Spawn accordingly.
 	void SpawnEnemy(Transform _enemy){
 		// Spawn Enemy
 		Debug.Log("Spawning Enemy: " + _enemy.name);
 
-		if (spawnPoints.Length == 0) {
+		if (spawnPoints.Count == 0) {
 			Debug.LogError ("No spawn points found");
 		}
 
-		Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+		// Spawn the traps at a position accordingly.
+		if (_enemy.name.StartsWith ("SpikeRow")) {
+			// Spawn SpikeRow gameobject to its original position (prefab's position)
+			Instantiate (_enemy, _enemy.transform.position, _enemy.transform.rotation);
+		} else if (_enemy.name == "Laser") {
+			// Get all the laser spawners.
+			List<Transform> laserSpawnPoints = spawnPoints.FindAll (s => s.name.StartsWith ("LaserSpawner"));
 
-		Instantiate(_enemy, _sp.position, _sp.rotation);
+			// Select a random spawn point
+			Transform _sp = laserSpawnPoints [Random.Range (0, laserSpawnPoints.Count)];
 
+			Instantiate (_enemy, _sp.position, _sp.rotation);
+		} else {
+			// Get all the default spawners.
+			List<Transform> defaultSpawnPoints = spawnPoints.FindAll (s => s.name.StartsWith ("DefaultSpawner"));
+
+			// Select a random spawn point
+			Transform _sp = defaultSpawnPoints [Random.Range (0, defaultSpawnPoints.Count)];
+
+			Instantiate(_enemy, _sp.position, _sp.rotation);
+		}
 	}
 }

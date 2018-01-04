@@ -20,6 +20,11 @@ public class HomingMissile : MonoBehaviour {
 			target = GameObject.FindGameObjectWithTag ("Player").transform;
 		}
 
+		// Check if the player is on the left side of the missile. Flip directions if necessary.
+		if (target.position.x < transform.position.x) {
+			transform.rotation = Quaternion.Euler (0, 180, 0);
+		}
+
 		rigidBody = GetComponent<Rigidbody2D> ();
 	}
 

@@ -16,31 +16,19 @@ public class Laser : MonoBehaviour {
 		lineRenderer = GetComponent<LineRenderer> ();
 		lineRenderer.enabled = true;
 		lineRenderer.useWorldSpace = true;
-
-		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up);
-		Debug.DrawLine (transform.position, hit.point);
-		laserHit.position = hit.point;
-
-		lineRenderer.startColor = new Color(1,1,1,1);
-		lineRenderer.endColor = new Color(1,1,1,1);
-		lineRenderer.widthMultiplier = 0.02f;
-
-		lineRenderer.SetPosition (0, transform.position);
-		lineRenderer.SetPosition (1, laserHit.position);
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
 
-		if(timer > waitTime){
+		if (timer > waitTime) {
+			// Fire the laser after a few seconds.
 			RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up);
-			Debug.DrawLine (transform.position, hit.point);
 			laserHit.position = hit.point;
 
-			lineRenderer.startColor = new Color(1,0,0,1);
-			lineRenderer.endColor = new Color(1,0,0,1);
+			lineRenderer.startColor = new Color (1, 0, 0, 1);
+			lineRenderer.endColor = new Color (1, 0, 0, 1);
 			lineRenderer.widthMultiplier = 0.1f;
 
 			lineRenderer.SetPosition (0, transform.position);
@@ -50,6 +38,17 @@ public class Laser : MonoBehaviour {
 			if (hit.transform.gameObject.tag.Equals ("Player")) {
 				hit.transform.gameObject.GetComponent<Player> ().ReceiveDamage ();
 			}
+		} else {
+			// Before firing the laser, show where the laser will fire.
+			RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up);
+			laserHit.position = hit.point;
+
+			lineRenderer.startColor = new Color(1,1,1,1);
+			lineRenderer.endColor = new Color(1,1,1,1);
+			lineRenderer.widthMultiplier = 0.02f;
+
+			lineRenderer.SetPosition (0, transform.position);
+			lineRenderer.SetPosition (1, laserHit.position);
 		}
 	}
 }

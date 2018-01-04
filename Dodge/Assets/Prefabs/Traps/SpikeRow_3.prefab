@@ -119,6 +119,7 @@ GameObject:
   - component: {fileID: 61420471817104974}
   - component: {fileID: 61115470385330782}
   - component: {fileID: 114540640928775260}
+  - component: {fileID: 114056387202730172}
   m_Layer: 10
   m_Name: SpikeRow_3
   m_TagString: Trap
@@ -533,6 +534,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.891888, y: 0.7143364}
   m_EdgeRadius: 0
+--- !u!114 &114056387202730172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1371659813653044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56244c69f06f9f345a5259c8b3de8b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114540640928775260
 MonoBehaviour:
   m_ObjectHideFlags: 1

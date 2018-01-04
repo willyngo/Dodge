@@ -8,7 +8,7 @@ public class Wave {
 	public string name;
 
 	// Reference to enemy prefab
-	public Transform enemy; // TODO: Create list of enemies
+	public Transform[] enemies;
 
 	// Number of enemies
 	public int count;
