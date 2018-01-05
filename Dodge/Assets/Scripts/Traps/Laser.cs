@@ -8,6 +8,8 @@ public class Laser : MonoBehaviour {
 
 	public Transform laserHit;
 
+	public LayerMask collisionMask;
+
 	private float timer = 0.0f;
 	public float waitTime = 6.0f;
 
@@ -24,7 +26,7 @@ public class Laser : MonoBehaviour {
 
 		if (timer > waitTime) {
 			// Fire the laser after a few seconds.
-			RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up);
+			RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up, Mathf.Infinity, collisionMask);
 			laserHit.position = hit.point;
 
 			lineRenderer.startColor = new Color (1, 0, 0, 1);
@@ -40,7 +42,7 @@ public class Laser : MonoBehaviour {
 			}
 		} else {
 			// Before firing the laser, show where the laser will fire.
-			RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up);
+			RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up, Mathf.Infinity, collisionMask);
 			laserHit.position = hit.point;
 
 			lineRenderer.startColor = new Color(1,1,1,1);

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LaserSpawnAnimator : MonoBehaviour {
 
-	public float movementSpeed = 0.5f;
+	public float movementSpeed = 2f;
 	private float timer = 0.0f;
-	public float destroyTimer = 15f;
+	public float destroyTimer = 8f;
 
 	private bool reachedDestination = false;
 

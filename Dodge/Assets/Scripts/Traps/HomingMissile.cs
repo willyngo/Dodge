@@ -45,7 +45,7 @@ public class HomingMissile : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag.Equals("Ground")
+		if (other.gameObject.tag.Equals("Level")
 			|| other.gameObject.tag.Equals("Player")) {
 
 			if (other.gameObject.tag.Equals ("Player")) {
