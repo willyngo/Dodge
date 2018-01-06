@@ -135,11 +135,10 @@ public class WaveSpawner : MonoBehaviour {
 		} 
 		else if(_enemy.name.StartsWith("fireball")){
 			//determine which fireball
-			if(_enemy.name.StartsWith("fireballRight")){
-				SpawnFireball(_enemy, 1);
-			}else{
-				SpawnFireball (_enemy, -1);
-			}
+			List<Transform> _splist = spawnPoints.FindAll(s => s.name.StartsWith("Fireball"));
+			Transform _sp = _splist [Random.Range (0, _splist.Count)];
+
+			Instantiate (_enemy, _sp.position, _sp.rotation);
 		}
 		else {
 			// Get all the default spawners.

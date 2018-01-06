@@ -11,7 +11,7 @@ public class Laser : MonoBehaviour {
 	public LayerMask collisionMask;
 
 	private float timer = 0.0f;
-	public float waitTime = 6.0f;
+	public float waitTime = 1.0f;
 
 	// Use this for initialization
 	void Start () {

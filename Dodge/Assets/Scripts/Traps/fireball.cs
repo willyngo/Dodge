@@ -5,20 +5,26 @@ using UnityEngine;
 public class fireball : MonoBehaviour {
 
 	bool contact; //
-	public int direction = 1;
+	private int direction = 1;
 	private int speed;
 
 	public Vector2 velocity;
-	public BoxCollider2D box;
-	public Animator anim;
+	private BoxCollider2D box;
+	private Animator anim;
 
 	// Use this for initialization
 	void Start () {
-		speed = Random.Range (1, 3);
+		speed = Random.Range (3, 6);
 
 		contact = false;
 		box = GetComponent<BoxCollider2D> ();
 		anim = GetComponent<Animator> ();
+
+		//Decide direction to go
+		GameObject player = GameObject.FindGameObjectWithTag ("Player");
+		if (player != null && player.transform.position.x < transform.position.x) {
+			direction = -1;
+		}
 	}
 	
 	// Update is called once per frame
