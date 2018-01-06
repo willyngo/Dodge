@@ -436,21 +436,22 @@ MonoBehaviour:
   - name: Wave 1
     enemies:
     - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
-    - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
-    count: 10
+    count: 5
     rate: 1.5
   - name: Wave 2
     enemies:
     - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
     - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
-    count: 6
+    - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
+    count: 9
     rate: 1.5
   - name: Wave 3
     enemies:
     - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
     - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
     - {fileID: 4555474916056642, guid: 7468b8cbde8152c448f2feb4ddb164aa, type: 2}
-    count: 9
+    - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
+    count: 15
     rate: 1
   - name: Wave 4
     enemies:
@@ -461,7 +462,8 @@ MonoBehaviour:
     - {fileID: 4104334628901698, guid: e7860023f8ed8004dbf64877aef0f5b6, type: 2}
     - {fileID: 4119538795665698, guid: 24ca3ef06a2ee30468f9b332d570f2e9, type: 2}
     - {fileID: 4218952199992816, guid: a0cc6ec388d57f2469ed81908218d323, type: 2}
-    count: 14
+    - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
+    count: 20
     rate: 0.3
   spawnPoints:
   - {fileID: 4400246326735796}
