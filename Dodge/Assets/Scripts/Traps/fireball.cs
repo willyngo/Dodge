@@ -5,7 +5,8 @@ using UnityEngine;
 public class fireball : MonoBehaviour {
 
 	bool contact; //
-//	public LayerMask collisionMask;
+	public int direction = 1;
+	private int speed;
 
 	public Vector2 velocity;
 	public BoxCollider2D box;
@@ -13,6 +14,8 @@ public class fireball : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		speed = Random.Range (1, 3);
+
 		contact = false;
 		box = GetComponent<BoxCollider2D> ();
 		anim = GetComponent<Animator> ();
@@ -28,7 +31,7 @@ public class fireball : MonoBehaviour {
 
 	private void Move(){
 		//Moves left for now
-		velocity.x = -1f;
+		velocity.x = speed * (direction / Mathf.Abs(direction));
 		transform.Translate (velocity * Time.deltaTime);
 	}
 

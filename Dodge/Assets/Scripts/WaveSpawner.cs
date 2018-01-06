@@ -132,7 +132,16 @@ public class WaveSpawner : MonoBehaviour {
 			Transform _sp = laserSpawnPoints [Random.Range (0, laserSpawnPoints.Count)];
 
 			Instantiate (_enemy, _sp.position, _sp.rotation);
-		} else {
+		} 
+		else if(_enemy.name.StartsWith("fireball")){
+			//determine which fireball
+			if(_enemy.name.StartsWith("fireballRight")){
+				SpawnFireball(_enemy, 1);
+			}else{
+				SpawnFireball (_enemy, -1);
+			}
+		}
+		else {
 			// Get all the default spawners.
 			List<Transform> defaultSpawnPoints = spawnPoints.FindAll (s => s.name.StartsWith ("DefaultSpawner"));
 
@@ -141,5 +150,19 @@ public class WaveSpawner : MonoBehaviour {
 
 			Instantiate(_enemy, _sp.position, _sp.rotation);
 		}
+	}
+
+	private void SpawnFireball(Transform fireball, int fireballDirection){
+
+		Transform _sp;
+
+		//Determine which spawnpoint to spawn fireball based on fireball direction
+		if (fireballDirection == 1) {
+			_sp = spawnPoints.Find (s => s.name.StartsWith ("FireballSpawnerLeft"));
+		} else {
+			_sp = spawnPoints.Find (s => s.name.StartsWith ("FireballSpawnerRight"));
+		}
+
+		Instantiate(fireball, _sp.position, _sp.rotation);
 	}
 }
