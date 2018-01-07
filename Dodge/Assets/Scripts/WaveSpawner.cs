@@ -28,8 +28,11 @@ public class WaveSpawner : MonoBehaviour {
 
 	private SpawnState state = SpawnState.COUNTING;
 
+	private PrefabManager prefabManager;
+
 	void Start() {
 		waveCountdown = timeBetweenWaves;
+		prefabManager = GetComponent<PrefabManager> ();
 	}
 
 	void Update() {
@@ -65,11 +68,13 @@ public class WaveSpawner : MonoBehaviour {
 		waveCountdown = timeBetweenWaves;
 
 		if (nextWave + 1 > waves.Length - 1) {
-			// TODO: Add stat multiplier
+			// Stat multiplier
 			timeBetweenWaves = timeBetweenWaves * statMultiplier;
 			for (int i = 0; i < waves.Length; i++) {
 				waves [i].rate = (waves [i].rate * statMultiplier) + waves [i].rate;
 			}
+
+			prefabManager.IncreaseSpikeRowSpeed(statMultiplier);
 
 			nextWave = 0;
 			Debug.Log ("ALL WAVES COMPLETE! Looping...");
