@@ -3087,6 +3087,21 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 3.43
       objectReference: {fileID: 0}
+    - target: {fileID: 114067382721275548, guid: b4db50c9e7830cd449cf7213e3a1cdcd,
+        type: 2}
+      propertyPath: waves.Array.data[3].rate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114067382721275548, guid: b4db50c9e7830cd449cf7213e3a1cdcd,
+        type: 2}
+      propertyPath: waves.Array.data[2].count
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114067382721275548, guid: b4db50c9e7830cd449cf7213e3a1cdcd,
+        type: 2}
+      propertyPath: waves.Array.data[2].rate
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4db50c9e7830cd449cf7213e3a1cdcd, type: 2}
   m_IsPrefabParent: 0
