@@ -55,15 +55,19 @@ public class HomingMissile : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag.Equals("Level")
+		if (other.gameObject.tag.Equals("Level") || other.gameObject.tag.Equals("Trap")
 			|| other.gameObject.tag.Equals("Player")) {
 
 			if (other.gameObject.tag.Equals ("Player")) {
 				other.gameObject.GetComponent<Player> ().ReceiveDamage ();
 			}
 
-			Instantiate (explosionEffect, transform.position, transform.rotation);
+			if(other.gameObject.tag.Equals("Trap")){
+				Instantiate (explosionEffect, other.transform.position, other.transform.rotation);
+				Destroy(other.gameObject);
+			}
 
+			Instantiate (explosionEffect, transform.position, transform.rotation);
 			Destroy(gameObject); 
 		}
 	}
