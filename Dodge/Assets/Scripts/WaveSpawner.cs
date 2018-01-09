@@ -12,6 +12,8 @@ public class WaveSpawner : MonoBehaviour {
 
 	public Wave[] waves;
 
+	private Transform lastLaserSpawnPoint; //remember last place of laser so to avoid spawning same position
+
 	// Index to wave spawning
 	private int nextWave = 0;
 
@@ -30,6 +32,7 @@ public class WaveSpawner : MonoBehaviour {
 
 	void Start() {
 		waveCountdown = timeBetweenWaves;
+		lastLaserSpawnPoint = null;
 	}
 
 	void Update() {
@@ -130,6 +133,13 @@ public class WaveSpawner : MonoBehaviour {
 
 			// Select a random spawn point
 			Transform _sp = laserSpawnPoints [Random.Range (0, laserSpawnPoints.Count)];
+
+			//Prevent spawning laser from same place
+			while (_sp == lastLaserSpawnPoint) {
+				Debug.Log ("Same spawn point! Choosing another one!");
+				_sp = laserSpawnPoints [Random.Range (0, laserSpawnPoints.Count)];
+			}
+			lastLaserSpawnPoint = _sp;
 
 			Instantiate (_enemy, _sp.position, _sp.rotation);
 		} 
