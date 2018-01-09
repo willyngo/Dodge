@@ -10,6 +10,9 @@ public class HomingMissile : MonoBehaviour {
 	public float speed = 5f;
 	public float rotateSpeed = 200f;
 
+	private float timer;
+	public float destroyTimer = 5f;
+
 	public GameObject explosionEffect;
 
 	private Rigidbody2D rigidBody;
@@ -42,6 +45,13 @@ public class HomingMissile : MonoBehaviour {
 		rigidBody.angularVelocity = -rotateAmount * rotateSpeed;
 
 		rigidBody.velocity = transform.right * speed;
+
+		//Detonate missile after some time passes if it doesn't hit something.
+		timer += Time.deltaTime;
+		if (timer >= destroyTimer) {
+			Instantiate (explosionEffect, transform.position, transform.rotation);
+			Destroy(gameObject); 
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

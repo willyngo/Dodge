@@ -298,7 +298,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1972054764133852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.96, y: 3.92, z: 1}
+  m_LocalPosition: {x: -8.34, y: 3.43, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4438597991306596}
@@ -402,7 +402,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1002088621576536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.04, y: 0.92, z: 1}
+  m_LocalPosition: {x: -8.32, y: 1.3, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4438597991306596}
@@ -435,27 +435,29 @@ MonoBehaviour:
   waves:
   - name: Wave 1
     enemies:
-    - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
-    count: 5
-    rate: 1.5
+    - {fileID: 4199440055432348, guid: b7370044c6efd4642afe32098aaddc21, type: 2}
+    - {fileID: 4199440055432348, guid: b7370044c6efd4642afe32098aaddc21, type: 2}
+    - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
+    count: 10
+    rate: 1
   - name: Wave 2
     enemies:
-    - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
+    - {fileID: 4199440055432348, guid: b7370044c6efd4642afe32098aaddc21, type: 2}
     - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
     - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
-    count: 9
+    count: 15
     rate: 1.5
   - name: Wave 3
     enemies:
-    - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
+    - {fileID: 4199440055432348, guid: b7370044c6efd4642afe32098aaddc21, type: 2}
     - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
     - {fileID: 4555474916056642, guid: 7468b8cbde8152c448f2feb4ddb164aa, type: 2}
     - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
-    count: 15
-    rate: 1
+    count: 20
+    rate: 1.5
   - name: Wave 4
     enemies:
-    - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
+    - {fileID: 4199440055432348, guid: b7370044c6efd4642afe32098aaddc21, type: 2}
     - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
     - {fileID: 4555474916056642, guid: 7468b8cbde8152c448f2feb4ddb164aa, type: 2}
     - {fileID: 4828533648466630, guid: 1f0914b13b231fa4ea3eb56562abe16f, type: 2}
@@ -463,8 +465,10 @@ MonoBehaviour:
     - {fileID: 4119538795665698, guid: 24ca3ef06a2ee30468f9b332d570f2e9, type: 2}
     - {fileID: 4218952199992816, guid: a0cc6ec388d57f2469ed81908218d323, type: 2}
     - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
-    count: 20
-    rate: 0.3
+    - {fileID: 4199440055432348, guid: b7370044c6efd4642afe32098aaddc21, type: 2}
+    - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
+    count: 25
+    rate: 0.7
   spawnPoints:
   - {fileID: 4400246326735796}
   - {fileID: 4905480518155786}
@@ -492,8 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2beb87e6f4ad3374baadc984373b36f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 4870442472359588, guid: c1bf4e9b0c149ef4098683bb81be777c,
-    type: 2}
+  prefabToSpawn: {fileID: 0}
   spawnRate: 1
   randomDelay: 3
 --- !u!114 &114752251093584434
@@ -507,8 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2beb87e6f4ad3374baadc984373b36f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 4475281695649246, guid: 42cbc36fe445fa840bc04365438a576e,
-    type: 2}
+  prefabToSpawn: {fileID: 0}
   spawnRate: 1
   randomDelay: 2
 --- !u!114 &114980921735101712
