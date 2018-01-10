@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4704667310984844}
   - component: {fileID: 120661594521448414}
   - component: {fileID: 114806965409487528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnCast
   m_TagString: Trap
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4377818323457868}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LaserFinalPosition
   m_TagString: Untagged
   m_Icon: {fileID: -3839803715187477772, guid: 0000000000000000d000000000000000, type: 0}
@@ -51,7 +51,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4695317551949008}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: hit
   m_TagString: Trap
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 114565248700615726}
   m_Layer: 9
   m_Name: Laser
-  m_TagString: Trap
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575672161118218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.162799, y: -0.6696929, z: 1}
+  m_LocalPosition: {x: -5.159995, y: 1.9639214, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4774419276048878}
@@ -212,7 +212,9 @@ MonoBehaviour:
   laserHit: {fileID: 4695317551949008}
   collisionMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 1792
+  explosionEffect: {fileID: 1837007281673192, guid: 898bec13296a6094a89713716d42bcb9,
+    type: 2}
   waitTime: 1
 --- !u!120 &120661594521448414
 LineRenderer:

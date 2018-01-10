@@ -10,6 +10,8 @@ public class Laser : MonoBehaviour {
 
 	public LayerMask collisionMask;
 
+	public GameObject explosionEffect;
+
 	private float timer = 0.0f;
 	public float waitTime = 1.0f;
 
@@ -39,6 +41,11 @@ public class Laser : MonoBehaviour {
 			// Check if the laser hits the player.
 			if (hit.transform.gameObject.tag.Equals ("Player")) {
 				hit.transform.gameObject.GetComponent<Player> ().ReceiveDamage ();
+			}
+			if (hit.transform.gameObject.tag.Equals ("Trap")) {
+				Debug.Log ("Laser hit a trap!");
+				Instantiate (explosionEffect, hit.transform.position, hit.transform.rotation);
+				Destroy (hit.transform.gameObject);
 			}
 		} else {
 			// Before firing the laser, show where the laser will fire.

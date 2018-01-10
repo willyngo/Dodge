@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114549368043387630}
   - component: {fileID: 61883328420333936}
   - component: {fileID: 50128213659058180}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EggBomb
   m_TagString: Trap
   m_Icon: {fileID: 0}

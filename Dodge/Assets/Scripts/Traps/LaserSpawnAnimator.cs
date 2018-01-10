@@ -24,7 +24,6 @@ public class LaserSpawnAnimator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-
 		// Move the laser gun forward a bit when it spawns.
 		if (laserGun.transform.position != endPosition && !reachedDestination) {
 			laserGun.transform.position = Vector3.MoveTowards (laserGun.transform.position, endPosition, movementSpeed * Time.deltaTime);

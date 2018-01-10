@@ -14,12 +14,10 @@ public class Player : MonoBehaviour
 	public float invulnerableTime = 2f;
 
 	/* MOVEMENT */
-	public float gravity;
-	//Amount of velocity y to fall
-	public float jumpHeight;
-	//Height of jump
-	public float speed;
-	//Horizontal movement speed
+	public float gravity; //Amount of velocity y to fall
+	public float jumpHeight; //Height of jump
+	public float minJumpHeight;
+	public float speed; //Horizontal movement speed
 
 	public int facing = 1;
 	//1 means facing right, -1 means left
@@ -43,7 +41,8 @@ public class Player : MonoBehaviour
 		health = 3;
 
 		//Kinematic formula, solve for acceleration going down
-		gravity = -(2 * 2.5f) / Mathf.Pow (0.32f, 2);
+		gravity = -(2 * 2.5f) / Mathf.Pow (0.36f, 2);
+
 	}
 	
 	// Update is called once per frame
@@ -203,6 +202,17 @@ public class Player : MonoBehaviour
 		//Jump
 		if (Input.GetKeyDown ("j")) {
 			OnJumpDown ();
+		}
+
+		if (Input.GetKeyUp ("j")) {
+			OnJumpUp ();
+		}
+	}
+
+	private void OnJumpUp()
+	{
+		if (velocity.y > 8f) {
+			velocity.y = 8f;
 		}
 	}
 
