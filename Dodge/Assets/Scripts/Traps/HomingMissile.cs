@@ -14,6 +14,9 @@ public class HomingMissile : MonoBehaviour {
 
 	private Rigidbody2D rigidBody;
 
+	private float timer;
+	public float timeUntilDestroy;
+
 	// Use this for initialization
 	void Start () {
 		if (target == null) {
@@ -26,6 +29,14 @@ public class HomingMissile : MonoBehaviour {
 		}
 
 		rigidBody = GetComponent<Rigidbody2D> ();
+	}
+
+	void Update() {
+		timer += Time.deltaTime;
+		if (timer >= timeUntilDestroy) {
+			Instantiate (explosionEffect, transform.position, transform.rotation);
+			Destroy (this.gameObject);
+		}
 	}
 
 	// For physics

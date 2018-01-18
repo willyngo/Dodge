@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Obsolete("This class is replaced by the SpawnAnimator, which can be used for general purposes.")]
 public class LaserSpawnAnimator : MonoBehaviour {
 
 	public float movementSpeed = 2f;

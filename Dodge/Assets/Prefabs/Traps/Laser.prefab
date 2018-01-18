@@ -66,7 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4555474916056642}
-  - component: {fileID: 114565248700615726}
+  - component: {fileID: 114447017210921018}
   m_Layer: 9
   m_Name: Laser
   m_TagString: Trap
@@ -185,7 +185,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42463273, y: 0.5942594}
   m_EdgeRadius: 0
---- !u!114 &114565248700615726
+--- !u!114 &114447017210921018
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -193,11 +193,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1575672161118218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 917d281555c296b459cafa2955ad471c, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a6d0fefc3f6e4149944108a8d60e79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
   destroyTimer: 2
+  objectToMove: {fileID: 4774419276048878}
+  endPoint: {fileID: 4377818323457868}
 --- !u!114 &114806965409487528
 MonoBehaviour:
   m_ObjectHideFlags: 1
