@@ -10,11 +10,12 @@ public class HomingMissile : MonoBehaviour {
 	public float speed = 5f;
 	public float rotateSpeed = 200f;
 
+	private float timer;
+	public float destroyTimer = 5f;
+
 	public GameObject explosionEffect;
 
 	private Rigidbody2D rigidBody;
-
-	private float timer;
 	public float timeUntilDestroy;
 
 	// Use this for initialization
@@ -53,18 +54,29 @@ public class HomingMissile : MonoBehaviour {
 		rigidBody.angularVelocity = -rotateAmount * rotateSpeed;
 
 		rigidBody.velocity = transform.right * speed;
+
+		//Detonate missile after some time passes if it doesn't hit something.
+		timer += Time.deltaTime;
+		if (timer >= destroyTimer) {
+			Instantiate (explosionEffect, transform.position, transform.rotation);
+			Destroy(gameObject); 
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag.Equals("Level")
+		if (other.gameObject.tag.Equals("Level") || other.gameObject.tag.Equals("Trap")
 			|| other.gameObject.tag.Equals("Player")) {
 
 			if (other.gameObject.tag.Equals ("Player")) {
 				other.gameObject.GetComponent<Player> ().ReceiveDamage ();
 			}
 
-			Instantiate (explosionEffect, transform.position, transform.rotation);
+			if(other.gameObject.tag.Equals("Trap")){
+				Instantiate (explosionEffect, other.transform.position, other.transform.rotation);
+				Destroy(other.gameObject);
+			}
 
+			Instantiate (explosionEffect, transform.position, transform.rotation);
 			Destroy(gameObject); 
 		}
 	}

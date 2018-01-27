@@ -368,7 +368,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1264425010715602}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -8.08, y: -0.79, z: 1}
+  m_LocalPosition: {x: -8.08, y: 0.72, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4438597991306596}
@@ -453,36 +453,9 @@ MonoBehaviour:
   waves:
   - name: Wave 1
     enemies:
-    - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
-    count: 5
+    - {fileID: 4199440055432348, guid: b7370044c6efd4642afe32098aaddc21, type: 2}
+    count: 10
     rate: 1.5
-  - name: Wave 2
-    enemies:
-    - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
-    - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
-    - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
-    count: 9
-    rate: 1.5
-  - name: Wave 3
-    enemies:
-    - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
-    - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
-    - {fileID: 4555474916056642, guid: 7468b8cbde8152c448f2feb4ddb164aa, type: 2}
-    - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
-    count: 15
-    rate: 1
-  - name: Wave 4
-    enemies:
-    - {fileID: 4644092584902472, guid: de755c7c9ca93544f86e3fe778d30798, type: 2}
-    - {fileID: 4159240447061676, guid: 02a3c9df35df8a044b9e0f31595227c9, type: 2}
-    - {fileID: 4555474916056642, guid: 7468b8cbde8152c448f2feb4ddb164aa, type: 2}
-    - {fileID: 4828533648466630, guid: 1f0914b13b231fa4ea3eb56562abe16f, type: 2}
-    - {fileID: 4104334628901698, guid: e7860023f8ed8004dbf64877aef0f5b6, type: 2}
-    - {fileID: 4119538795665698, guid: 24ca3ef06a2ee30468f9b332d570f2e9, type: 2}
-    - {fileID: 4218952199992816, guid: a0cc6ec388d57f2469ed81908218d323, type: 2}
-    - {fileID: 4848391805410862, guid: 85d5d7cdaea1a74488a15b228b04e3a3, type: 2}
-    count: 20
-    rate: 0.3
   spawnPoints:
   - {fileID: 4400246326735796}
   - {fileID: 4905480518155786}
