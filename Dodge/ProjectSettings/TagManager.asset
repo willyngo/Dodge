@@ -10,6 +10,7 @@ TagManager:
   - Item
   - Coin
   - Level
+  - Music
   layers:
   - Default
   - TransparentFX
